@@ -1,0 +1,12 @@
+Good:
+-We did time estimation
+-All group members able to share
+-Overall work quality
+
+Bad:
+-Time management needs to be kept in mind
+-Overall comfort level (already improving)
+-Git knowledge needs work
+
+Ugly:
+-Nothing this time

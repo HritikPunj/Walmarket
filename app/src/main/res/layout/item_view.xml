@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_margin="15dp"
+        app:cardBackgroundColor="@color/walmarketBlue"
+        app:cardCornerRadius="15dp"
+        >
+        
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <ImageView
+                android:id="@+id/itemImage"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars"
+                />
+
+            <TextView
+                android:id="@+id/itemName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@+id/itemImage"
+                app:layout_constraintStart_toEndOf="@id/itemImage"
+                android:layout_marginStart="20dp"
+                android:fontFamily="casual"
+                android:textAlignment="center"
+                android:textColor="@color/walmarketYellow"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                android:text="@string/itemNameStringDefault"
+                />
+
+            <TextView
+                android:id="@+id/itemPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/itemImage"
+                app:layout_constraintStart_toStartOf="@id/itemName"
+                android:fontFamily="casual"
+                android:textAlignment="center"
+                android:textColor="@color/walmarketYellow"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/itemPriceStringDefault"
+                />
+
+            <TextView
+                android:id="@+id/itemStock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="@id/itemImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="casual"
+                android:textColor="@color/walmarketYellow"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:text="@string/stockNumberStringDefault"
+                />
+
+            <Button
+                android:id="@+id/decrementCartQuantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/walmarketYellow"
+                android:fontFamily="casual"
+                android:text="@string/decrementCartQuantityButtonString"
+                android:textAlignment="center"
+                android:textColor="@color/walmarketBlue"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@id/specialButton"
+                app:layout_constraintEnd_toStartOf="@id/cartQuantity"
+                app:layout_constraintTop_toTopOf="@id/specialButton" />
+
+            <EditText
+                android:id="@+id/cartQuantity"
+                android:layout_width="75dp"
+                android:layout_height="50dp"
+                android:ems="100"
+                android:inputType="number"
+                app:layout_constraintTop_toTopOf="@id/specialButton"
+                app:layout_constraintBottom_toBottomOf="@id/specialButton"
+                app:layout_constraintEnd_toStartOf="@id/incrementCartQuantity"
+                android:layout_margin="15dp"
+                android:background="@color/white"
+                android:text="@string/cartQuantityDefaultString"
+                android:textColor="@color/walmarketBlue"
+                android:textAlignment="center"
+                android:textSize="25sp"
+                android:fontFamily="casual"
+                android:enabled="false"
+                />
+
+            <Button
+                android:id="@+id/incrementCartQuantity"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:backgroundTint="@color/walmarketYellow"
+                android:fontFamily="casual"
+                android:text="@string/incrementCartQuantityButtonString"
+                android:textAlignment="center"
+                android:textColor="@color/walmarketBlue"
+                android:textSize="25sp"
+                app:layout_constraintBottom_toBottomOf="@id/specialButton"
+                app:layout_constraintEnd_toStartOf="@id/specialButton"
+                app:layout_constraintTop_toTopOf="@id/specialButton" />
+
+            <ImageButton
+                android:id="@+id/specialButton"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_margin="15dp"
+                android:background="@drawable/button_background"
+                android:padding="15dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/cart"
+                app:layout_constraintBottom_toTopOf="@id/itemStock"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+    
+</androidx.constraintlayout.widget.ConstraintLayout>

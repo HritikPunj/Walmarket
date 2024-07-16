@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cartView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.PageCart">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/walmarket_removebg_preview_2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cartItems"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/walmarketBlue"
+        android:layout_margin="15dp"
+        app:layout_constraintTop_toBottomOf="@id/cartItems"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/orderSubtotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/orderSubtotalStringDefault"/>
+
+    <TextView
+        android:id="@+id/GST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/orderSubtotal"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/gstDefaultString"/>
+
+    <TextView
+        android:id="@+id/PST"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/GST"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/pstDefaultString"/>
+
+    <TextView
+        android:id="@+id/deliveryFee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/PST"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/deliveryFeeDefaultString"/>
+
+    <TextView
+        android:id="@+id/orderTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/deliveryFee"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:fontFamily="casual"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:text="@string/totalDefaultString"/>
+
+    <Button
+        android:id="@+id/clearCart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onClearCart"
+        android:text="@string/clearCartButtonString"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/proceedToPayment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onProceedToPayment"
+        android:text="@string/proceedToPaymentButtonString"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/clearCart" />
+
+    <Button
+        android:id="@+id/itemBrowserPageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onGoToItemBrowserPage"
+        android:text="@string/itemBrowserButtonString"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

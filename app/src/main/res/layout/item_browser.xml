@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemBrowserView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.PageBrowser">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="500dp"
+        android:layout_height="100dp"
+        android:layout_margin="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/walmarket_removebg_preview_2" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBrowser"
+        android:layout_width="match_parent"
+        android:layout_height="490dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchBar" />
+
+    <TextView
+        android:id="@+id/pageTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:fontFamily="casual"
+        android:text="@string/pageNumberStringDefault"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rvBrowser" />
+
+    <Button
+        android:id="@+id/lastPageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onClickPrevButton"
+        android:text="@string/lastPageButtonString"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/pageTextView"
+        app:layout_constraintEnd_toStartOf="@id/pageTextView"
+        app:layout_constraintTop_toTopOf="@id/pageTextView" />
+
+    <Button
+        android:id="@+id/nextPageButton"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="10dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onClickNextButton"
+        android:text="@string/nextPageButtonString"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/pageTextView"
+        app:layout_constraintStart_toEndOf="@id/pageTextView"
+        app:layout_constraintTop_toTopOf="@id/pageTextView" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="775dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/searchBarDefault"
+        android:textAlignment="textStart"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/rvBrowser"
+        android:fontFamily="casual"
+        android:inputType="text"
+        android:imeOptions="actionSearch"
+        app:layout_constraintStart_toEndOf="@id/categoriesLayout"
+        app:layout_constraintEnd_toStartOf="@id/clearSearchButton"
+        app:layout_constraintTop_toBottomOf="@id/logo" />
+
+    <Button
+        android:id="@+id/clearSearchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_margin="10dp"
+        android:fontFamily="casual"
+        android:backgroundTint="@color/walmarketYellow"
+        android:onClick="onClearSearch"
+        android:text="@string/clearSearchButtonString"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        app:layout_constraintTop_toTopOf="@id/searchBar"
+        app:layout_constraintStart_toEndOf="@id/searchBar"/>
+
+    <Button
+        android:id="@+id/searchButton"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="25dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onClickSearchButton"
+        android:text="@string/searchButtonString"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/searchBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/clearSearchButton"
+        app:layout_constraintTop_toTopOf="@id/searchBar" />
+
+    <Button
+        android:id="@+id/signInOrCreateAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:text="@string/signInButtonString"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:onClick="onSignInOrCreateAccount"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/signOutButton"
+        />
+
+    <Button
+        android:id="@+id/signOutButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:text="@string/signOutButtonString"
+        android:onClick="onSignOut"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:paddingEnd="20dp"
+        android:paddingStart="20dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/myCartPageButton"
+        />
+
+    <Button
+        android:id="@+id/myCartPageButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/walmarketYellow"
+        android:fontFamily="casual"
+        android:onClick="onGoToCartPage"
+        android:text="@string/myCartPagButtonString"
+        android:textAlignment="center"
+        android:textColor="@color/walmarketBlue"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/categoriesLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/dropdown_background"
+        app:layout_constraintTop_toTopOf="@id/searchBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        >
+
+        <Spinner
+            android:id="@+id/categoriesDropDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:spinnerMode="dropdown" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

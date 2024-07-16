@@ -1,0 +1,50 @@
+DSOs:
+-------------------------
+-User
+	-UserID
+	-UserName
+	-SavedPaymentInfo
+	-OrderHistory
+-Item
+	-ItemID
+	-ItemName
+	-SellerID
+	-ItemInfo //Abstracted as some struct we can change later
+		-ItemDesc
+		-ItemImage
+-Order
+	-UserID(s)
+	-ItemID(s)
+-Store/Seller/etc.
+	-SellerID
+	-SoldItem(s)
+	-SellerInfo //Abstracted as some struct we can change later
+		-SellerDesc
+		-SellerImage
+Logic:
+------------------------------
+-QueryHandler
+	-RunQuery()
+-QueryFormatter
+	-FormatInput()
+-SellerManager()
+	-GetAllSellers()
+-StoreHelper
+	-FetchItems()
+-BrowserHelper
+	-RetrieveAllItems()
+	-SearchForItems()
+
+UI:
+-------------------------------
+-LayoutManager
+	-ResizeScreen()
+	-CreateItemGrid()
+
+
+Dev Tasks
+-------------------------------
+
+Runner
+-------------------------------
+glrt-eU_DtrujkUB967C8nUG-
